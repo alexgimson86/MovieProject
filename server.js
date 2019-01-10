@@ -4,6 +4,7 @@ var request = require('request');
 var cors = require('cors')
  
 app.use(cors())
+app.use('/public', express.static('public'));
 
 app.get('/movies', function(req, res){
    /*var link =  'https://api.themoviedb.org/3/discover/movie?api_key=baf70dcc60ac4c339602a8f30a38501d?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22/76341';*/
@@ -17,6 +18,9 @@ app.get('/movies', function(req, res){
     res.render('movies.ejs', { data: data.results });
 });
 })
+app.get('/home', (req,res)=>{
+    res.render('home.ejs');
+});
 app.listen(3000, function() {
     console.log("App is listening on port 3000");
 });
