@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <ul>
+        <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+            <% for(let i =0; i < 10; i++) { %>
+                <li>
+                    <h1 id="title">
+                        <%-data[i].title %>
+                    </h1>
+                </li>
+                <li>
+                    <h3>
+                   rated with <%-data[i].vote_average %> stars
+                    </h3>
+                </li>
+                <li>
+                    <%-data[i].overview %>
+                </li>
+                <li>
+                    <img src="https://image.tmdb.org/t/p/w1280<%-data[i].poster_path %>" alt="poster_path">
+                </li><br>
+                <% } %>
+        </div>
+    </ul>
+    <script src=" " async defer></script>
+</body>
+
+</html>

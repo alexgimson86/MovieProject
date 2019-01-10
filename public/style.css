@@ -1,5 +1,5 @@
 body {
-    background-image: url("theater1.jpg");
+    background-color: grey;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -14,6 +14,16 @@ ul{
 #title{
     color: burlywood;
 }
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
 li {
     color: white;
     margin-right: 500px;
