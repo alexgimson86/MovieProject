@@ -12,7 +12,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../public/style.css">
 </head>
 
 <body>
@@ -23,17 +23,21 @@
         <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
             <% for(let i =0; i < 10; i++) { %>
                 <li>
-                    <%-data[i].title %>
+                    <h1 id="title">
+                        <%-data[i].title %>
+                    </h1>
                 </li>
                 <li>
-                    <%-data[i].vote_average %>
+                    <h3>
+                   rated with <%-data[i].vote_average %> stars
+                    </h3>
                 </li>
                 <li>
                     <%-data[i].overview %>
                 </li>
                 <li>
                     <img src="https://image.tmdb.org/t/p/w1280<%-data[i].poster_path %>" alt="poster_path">
-                </li>
+                </li><br>
                 <% } %>
         </div>
     </ul>

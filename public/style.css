@@ -3,3 +3,18 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+img {
+    width: 80%;
+    height: auto;
+}
+ul{
+    list-style: none;
+}
+#title{
+    color: burlywood;
+}
+li {
+    color: white;
+    margin-right: 500px;
+}
