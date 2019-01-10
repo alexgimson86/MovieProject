@@ -18,6 +18,28 @@ app.get('/movies', function(req, res){
     res.render('movies.ejs', { data: data.results });
 });
 })
+app.get('/kidsMovies', function(req, res){
+    var link ='https://api.themoviedb.org/3/discover/movie?api_key=baf70dcc60ac4c339602a8f30a38501d&language=en-US&certification_country=US&certification.lte=G&sort_by=popularity.desc'
+    request(link, function(error, response, body) {
+        var data = JSON.parse(body);
+        var title = "";
+        title = data.title
+        var overview = data.overview
+    
+        res.render('kidsMovies.ejs', { data: data.results });
+});
+})
+app.get('/badMovies', function(req, res){
+    var link ='https://api.themoviedb.org/3/discover/movie?api_key=baf70dcc60ac4c339602a8f30a38501d&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=1'
+    request(link, function(error, response, body) {
+        var data = JSON.parse(body);
+        var title = "";
+        title = data.title
+        var overview = data.overview
+    
+        res.render('badMovies.ejs', { data: data.results });
+});
+})
 app.get('/home', (req,res)=>{
     res.render('home.ejs');
 });
