@@ -3,48 +3,56 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
-
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>movies</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../public/style.css">
 </head>
 
 <body>
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <ul>
-        <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-            <% for(let i =0; i < 10; i++) { %>
-                <li>
-                    <h1 id="title">
-                        <%-data[i].title %>
-                    </h1>
-                </li>
-                <li>
-                    <h3>
-                   rated with <%-data[i].vote_average %> stars
-                    </h3>
-                    <% for(let j = 0; j < data[i].vote_average; j++) { %>
-                        <img  id="star" src="../public/star.jpeg"  alt="star">
-                  <%  } %>
-                </li>
-                <li>
-                    <%-data[i].overview %>
-                </li>
-                <li>
-                    <img id="poster_path" src="https://image.tmdb.org/t/p/w1280<%-data[i].poster_path %>" alt="poster_path">
-                </li><br>
-                <% } %>
-        </div>
-    </ul>
-    <script src=" " async defer></script>
+        <div class="container">
+        <div class="jumbotron">
+                <h1 class="display-3">Popular Movies</h1>
+                </div>
+       </div>
+    <div class="container">
+
+        <ul class="list-group">
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+                <% for(let i =0; i < 10; i++) { %>
+                    <li class="list-group-item list-group-item-secondary">
+                        <h1 id="title">
+                            <%-data[i].title %>
+                        </h1>
+                    </li>
+                    <li class="list-group-item list-group-item-secondary">
+                        <h3>
+                            rated with <%-data[i].vote_average %> stars
+                        </h3>
+                        <div>
+                            <% for(let j = 0; j < data[i].vote_average; j++) { %>
+                                <img  id="star" src="../public/star.jpeg"  alt="star">
+                                <%  } %>
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-secondary">
+                            <%-data[i].overview %>
+                        </li>
+                        <li class="list-group-item list-group-item-secondary">
+                            <img id="poster_path" src="https://image.tmdb.org/t/p/w1280<%-data[i].poster_path %>" alt="poster_path">
+                        </li><br>
+                        <% } %>
+                    </div>
+                </ul>
+            </div>
 </body>
 
 </html>
